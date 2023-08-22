@@ -1,17 +1,55 @@
-# splunk_app_blocklist
+# Splunk Blocklist Integration App
 
-Splunk Blocklist Integration App
-Description:
-This repository houses the Splunk Blocklist Integration App, a tool designed to automate the process of fetching recently blacklisted IP addresses from blocklist.de at hourly intervals and ingesting this data into Splunk. The app ensures data integrity by performing deduplication, ensuring that only unique IP addresses are ingested. This app aids security and IT professionals by offering an automated solution to monitor and analyze potentially malicious IP addresses, streamlining the threat detection process.
+The Splunk Blocklist Integration App is designed to fetch blacklisted IP addresses from `blocklist.de` on an hourly basis and ingest this data into Splunk. This automation aids security and IT professionals in monitoring and analyzing potentially malicious IP addresses.
 
-Features:
+![Снимок экрана 2023-08-22 151031](https://github.com/DamikoMu/splunk_app_blocklist/assets/48206331/f86fca10-f0a7-4e9b-afa2-2ffbb4d08a79)
 
-Hourly automated data collection from blocklist.de.
-Built-in data deduplication ensuring only new IP addresses are ingested.
-Seamless integration with Splunk, making data visualization and analysis straightforward.
-Python-based data collection script ensuring cross-platform compatibility.
-Use Cases:
 
-Monitor and alert on traffic from blacklisted IPs in real-time.
-Analyze traffic patterns over time and detect anomalies.
-Integrate with other threat intelligence sources to create a comprehensive security posture.
+## Features
+
+- **Automated Data Collection**: Fetches blacklisted IP addresses every hour.
+- **Data Deduplication**: Ensures only new IP addresses are ingested into Splunk.
+- **Python Script**: Cross-platform compatibility and easy integration with Splunk.
+
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Support](#support)
+
+## Prerequisites
+
+- Splunk instance up and running.
+- Python 3.x installed on the machine where Splunk is running.
+- Appropriate permissions to create and manage Splunk apps and data inputs.
+
+## Installation
+
+1. **Clone the Repository**:  
+    ```bash
+    git clone https://github.com/your_username/splunk-blocklist-app.git
+    ```
+
+2. **Move to Splunk Apps Directory**:  
+    Navigate to your Splunk installation directory and place the cloned repository in the `apps` folder.
+
+3. **Restart Splunk**:  
+    This ensures Splunk recognizes and integrates the new app.
+
+## Usage
+
+1. **Configure Data Input**:  
+    In Splunk, navigate to "Settings" > "Data inputs", and set up a new script-based data input pointing to the `blocklist_puller.py` script. Set the interval to 3600 seconds (1 hour).
+
+
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Support
+
+For support, bug reports, or feature requests, please open an issue on our [issues page](link_to_issues_page) or reach out via email at [support@example.com](mailto:support@example.com).
